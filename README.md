@@ -34,7 +34,7 @@ This repository contains all datasets, scripts, and example commands used during
 
 Clone the repository:
 ```bash
-git clone https://github.com/omatheuspimenta/phylo
+git clone https://github.com/omatheuspimenta/phylo.git
 cd phylo
 ````
 
