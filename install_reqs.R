@@ -1,16 +1,22 @@
-# Install packages in R env
-if (!require("BiocManager", quietly = TRUE))
+# Define o mirror CRAN manualmente
+options(repos = c(CRAN = "https://cran-r.c3sl.ufpr.br"))
+
+# Instala o BiocManager, se necessário
+if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
-BiocManager::install("ggtree")
+# Instala pacote do Bioconductor
+BiocManager::install("ggtree", ask = FALSE)
 
-install.packages("Rcpp", repos="https://cloud.r-project.org/")
-install.packages("getopte", repos="https://cloud.r-project.org/")
-install.packages("optparse", repos="https://cloud.r-project.org/")
-install.packages("digest", repos="https://cloud.r-project.org/")
-install.packages("jsonlite", repos="https://cloud.r-project.org/")
-install.packages("ape", repos="https://cloud.r-project.org/")
-install.packages("ggplot2", repos="https://cloud.r-project.org/")
-install.packages("dplyr", repos="https://cloud.r-project.org/")
-install.packages("RColorBrewer", repos="https://cloud.r-project.org/")
-install.packages("phangorn", repos="https://cloud.r-project.org/")
+# Instala pacotes do CRAN
+install.packages("Rcpp")
+install.packages("getopt")      # Corrigido nome do pacote
+install.packages("optparse")
+install.packages("digest")
+install.packages("jsonlite")
+install.packages("ape")
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("RColorBrewer")
+install.packages("phangorn")
+
