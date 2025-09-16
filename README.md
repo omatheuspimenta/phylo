@@ -83,6 +83,7 @@ realpath MKPX/output_mike/* > mike_MKPX.txt
 ./mike dist    -l mike_MKPX.txt -L mike_MKPX.txt -d MKPX/
 
 # Generate a Newick tree
+conda activate R4
 Rscript draw.r -f MKPX/dist.txt -o MKPX/dist.nwk
 ```
 
@@ -100,6 +101,7 @@ mashtree_bootstrap.pl --reps 100 MKPX/seqs/*.fasta -- --min-depth 0 \
 ### 3️⃣ Plotting MKPX Trees
 
 ```bash
+conda activate R4
 Rscript create_tree_MKPX.R -t MKPX/dist.nwk                -a MKPX/annotation.csv -o MKPX/
 Rscript create_tree_MKPX.R -t MKPX/mashtree.dnd            -a MKPX/annotation.csv -o MKPX/
 Rscript create_tree_MKPX.R -t MKPX/mashtree.bootstrap.dnd  -a MKPX/annotation.csv -o MKPX/
@@ -129,6 +131,7 @@ mashtree_bootstrap.pl --reps 100 HIV/samples/*.fasta -- --min-depth 0 --kmerleng
 ### Plotting HIV Trees
 
 ```bash
+conda activate R4
 Rscript create_tree_HIV.R -t HIV/mashtree.dnd           -a HIV/annotation.csv -o HIV/ --confidence none
 Rscript create_tree_HIV.R -t HIV/mashtree.bootstrap.dnd -a HIV/annotation.csv -o HIV/ --confidence color
 ```
