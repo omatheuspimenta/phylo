@@ -66,7 +66,7 @@ realpath MKPX/seqs/* > seqs_MKPX.txt
 
 # Generate k-mer sketches
 while read seq; do
-    python kmc.py -k 21 -f "$seq" -d MKPX/output_kmers/
+    python kmc.py -k 21 -f "$seq" -d MKPX/output_kmers/;
 done < seqs_MKPX.txt
 
 # List k-mer files
